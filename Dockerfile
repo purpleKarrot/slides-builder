@@ -46,3 +46,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         texlive-plain-generic \
         texlive-xetex \
     && rm -rf /var/lib/apt/lists/*
+
+COPY filters /usr/local/share/slides-builder/filters
+
+ENTRYPOINT ["pandoc", "--filter", "/usr/local/share/slides-builder/filters/plantuml.py"]
+CMD ["--help"]
