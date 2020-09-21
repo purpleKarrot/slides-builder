@@ -24,7 +24,7 @@ RUN buildDeps="ca-certificates curl" \
     && apt-get purge --auto-remove -y $buildDeps \
     && rm -rf /var/lib/apt/lists/*
 
-RUN buildDeps="python-pip python-setuptools python-wheel" \
+RUN buildDeps="python3-pip python3-setuptools python3-wheel" \
     && apt-get update \
     && apt-get install -y --no-install-recommends $buildDeps \
     && pip install pandocfilters \
