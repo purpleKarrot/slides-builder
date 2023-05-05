@@ -1,11 +1,11 @@
-FROM debian:sid
+FROM debian:bullseye-slim
 
 RUN buildDeps="ca-certificates curl fontconfig unzip" \
     && apt-get update \
     && apt-get install -y --no-install-recommends $buildDeps \
     && cd /tmp \
-    && curl -SLO https://dl.1001fonts.com/fira-mono.zip \
-    && curl -SLO https://dl.1001fonts.com/fira-sans.zip \
+    && curl -SLO https://1001fonts.com/download/fira-mono.zip \
+    && curl -SLO https://1001fonts.com/download/fira-sans.zip \
     && unzip fira-mono.zip \
     && unzip fira-sans.zip \
     && mkdir -p /usr/share/fonts/truetype/fira \
